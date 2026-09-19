@@ -8,10 +8,10 @@ The layouts match the panel controls of the Machinedrum and Monomachine emulator
 
 ## Files
 
-- `lpx_static_colors.py` — Machinedrum layout. Run this script to light the pads.
-- `lpx_layout_map.png` — Picture of the Machinedrum layout.
-- `lpx_static_colors_mm.py` — Monomachine layout. Run this script to light the pads.
-- `lpx_layout_map_mm.png` — Picture of the Monomachine layout.
+- `lpx_MD_layout.py` — Machinedrum layout. Run this script to light the pads.
+- `lpx_MD_layout.png` — Picture of the Machinedrum layout.
+- `lpx_MM_layout.py` — Monomachine layout. Run this script to light the pads.
+- `lpx_MM_layout.png` — Picture of the Monomachine layout.
 
 ## Requirements
 
@@ -26,11 +26,11 @@ pip3 install mido python-rtmidi
 Connect the Launchpad X to the computer. Run the script for the layout you need.
 
 ```
-python3 lpx_static_colors.py
+python3 lpx_MD_layout.py
 ```
 
 ```
-python3 lpx_static_colors_mm.py
+python3 lpx_MM_layout.py
 ```
 
 The script finds the Launchpad X MIDI port and sends the layout. The pads stay lit. The computer does not need to stay connected after the script runs.
@@ -38,13 +38,13 @@ The script finds the Launchpad X MIDI port and sends the layout. The pads stay l
 List the available MIDI ports:
 
 ```
-python3 lpx_static_colors.py --list
+python3 lpx_MD_layout.py --list
 ```
 
 Return the Launchpad X to Live Mode:
 
 ```
-python3 lpx_static_colors.py --exit
+python3 lpx_MD_layout.py --exit
 ```
 
 ## Port selection
@@ -64,4 +64,4 @@ The scripts do not map combinations. A combination is already reachable through 
 
 Each script contains a `LAYOUT` dictionary. Each entry maps a grid position to a label and a color. Row 1 is the bottom row. Row 8 is the top row. Column 1 is the left column.
 
-Edit the `LAYOUT` dictionary to change the mapping. Run the matching `render_layout*.py` script to update the picture. Keep the script and the picture in sync.
+Edit the `LAYOUT` dictionary to change the mapping. Keep the script and the picture in sync.
